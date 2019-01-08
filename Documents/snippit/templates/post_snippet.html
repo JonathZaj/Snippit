@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Snippit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Snippit">
+    <meta name="keywords" content="snippets, community, python">
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Righteous" rel="stylesheet">
+    <link href="/css/snippit.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Kodchasan" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="shadowed">
+            <div id="divider" class="shadowed animated-height">
+                <a class="logo" href="/">SNI.PET</a>
+                <form method="post" action="/search_results" class=search-bar>
+                    <input class="search-field" name="q" type="text" />
+                    <input class="clickable search-btn shadowed" type="submit" value="search" />
+                </form>
+                <form>
+                    <button>Sign up</button>
+                    <button>login</button>
+                </form>
+            </div>
+        </header>
+        <main class="page-content">
+            <div class="add-snippet">
+
+                <form method="post" action="/add_snippet">
+                    <label for="title"><b>title</b></label><br>
+                    <input name="title" type="text" size="65" required /><br><br>
+                    <b>code</b> <br>
+                    <textarea rows="7" cols="190" name="code" required> </textarea><br><br>
+                    <label for="explanation"><b>explanation</b></label><br>
+                    <textarea rows="7" cols="190" name="explanation"> </textarea><br><br>
+                    <label for="language"><b>language</b></label><br>
+                    <input name="language" type="text" size="65" required /><br><br>
+                    <label for=" library"><b> frameworks/libraries</b></label><br>
+                    <input name="library" type="text" size="65" required /><br><br>
+                    <label for=" topic"><b>Tag</b></label><br>
+                    <input name="topic" type="text" size="65" required /><br><br>
+                    <input type="submit" value="add snippet">
+
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="/js/browse.js"></script>
+</body>
+
+</html>

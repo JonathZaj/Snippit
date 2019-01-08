@@ -1,0 +1,373 @@
+html, body{
+    margin:0px;
+    font-family:Arial;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    overflow: scroll;
+}
+
+@font-face {
+ font-family: 'Fira Code';
+  src: url(../font/FiraCode-Regular.otf);
+}
+
+.search-form{
+    margin-top: 20%;
+}
+
+form{
+    text-align: center;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+    padding:0px;
+    margin:0px;
+}
+
+[onclick], .clickable{
+    cursor: pointer;
+}
+
+.shadowed{
+    -webkit-box-shadow: 2px 2px 2px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 2px -2px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 2px -2px rgba(0,0,0,0.75);
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-color: gray;
+    font-family: 'Fira Code';
+    font-size:22px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid white;
+    box-sizing: border-box;
+    z-index:1;
+    position: relative;
+}
+
+.snippet-content{
+    width: 100%;
+    margin-right: 7%;
+}
+
+header nav:hover{
+    background-color: rgba(255,255,255,0.4);
+}
+
+main{
+    position: relative;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background-color: #f9f9f9;
+    margin-top: 3vh;
+    flex-direction: column;
+}
+
+section{
+    width: 100%;
+    overflow: auto;
+    height: auto;
+    text-align: left;
+    padding: 20px;
+    color: white;
+}
+
+section h1{
+    font-family: 'Cairo';
+    font-size: 40px;
+    margin-top: 0px;
+    line-height: 40px;
+}
+
+section h2{
+    margin-top: 0px;
+    font-size: 16px;
+    font-family: Cairo;
+}
+
+section p{
+    max-width: 50%;
+}
+
+.logo{
+    width: 90px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 20px;
+}
+
+.logo_t{
+    background-color: #A7E043;
+}
+
+#divider{
+    width: 100%;
+    height: 50px;
+    background-color: #326388;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dynamic.loading{
+    background-image: url(/images/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100px;
+}
+
+.nav-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+nav{
+    margin-right: 40px;
+}
+
+.search-button{
+    margin-bottom: 10px;
+}
+
+.search-btn{
+    background-color: white;
+    width: auto;
+    font-family: 'Fira Code';
+    color: #326388;
+    padding: 5px 20px;
+    vertical-align: bottom;
+    margin-left: 5px;
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    border-radius: 1px;
+    font-size: 18px;
+    width: 160px;
+}
+
+.search-field{
+    font-family: Arial;
+    font-size: 26px;
+    width: 65%;
+    border-radius: 0px;
+    border-style: solid;
+    border-color: #e8e8e8;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+
+.search-results{
+    display:inline-block;
+}
+
+.search-result{
+    font-weight: 100;
+    color: #326388;
+    margin-top: 5px;
+    border: 1px solid #bbc0c4;
+    margin-right: auto;
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    border-radius: 3px;
+    background-color: #fff;
+    margin-left: auto;
+}
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    width: 60vw
+}
+
+.highlight{min-height: 50px;}
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #8f5902; font-style: italic } /* Comment */
+.highlight .err { color: #a40000; border: 1px solid #ef2929 } /* Error */
+.highlight .g { color: #000000 } /* Generic */
+.highlight .k { color: #204a87; font-weight: bold } /* Keyword */
+.highlight .l { color: #000000 } /* Literal */
+.highlight .n { color: #000000 } /* Name */
+.highlight .o { color: #ce5c00; font-weight: bold } /* Operator */
+.highlight .x { color: #000000 } /* Other */
+.highlight .p { color: #000000; font-weight: bold } /* Punctuation */
+.highlight .ch { color: #8f5902; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #8f5902; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #8f5902; font-style: italic } /* Comment.Preproc */
+.highlight .cpf { color: #8f5902; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #8f5902; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #8f5902; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #a40000 } /* Generic.Deleted */
+.highlight .ge { color: #000000; font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #ef2929 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #000000; font-style: italic } /* Generic.Output */
+.highlight .gp { color: #8f5902 } /* Generic.Prompt */
+.highlight .gs { color: #000000; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #a40000; font-weight: bold } /* Generic.Traceback */
+.highlight .kc { color: #204a87; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #204a87; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #204a87; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #204a87; font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { color: #204a87; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #204a87; font-weight: bold } /* Keyword.Type */
+.highlight .ld { color: #000000 } /* Literal.Date */
+.highlight .m { color: #0000cf; font-weight: bold } /* Literal.Number */
+.highlight .s { color: #4e9a06 } /* Literal.String */
+.highlight .na { color: #c4a000 } /* Name.Attribute */
+.highlight .nb { color: #204a87 } /* Name.Builtin */
+.highlight .nc { color: #000000 } /* Name.Class */
+.highlight .no { color: #000000 } /* Name.Constant */
+.highlight .nd { color: #5c35cc; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #ce5c00 } /* Name.Entity */
+.highlight .ne { color: #cc0000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #000000 } /* Name.Function */
+.highlight .nl { color: #f57900 } /* Name.Label */
+.highlight .nn { color: #000000 } /* Name.Namespace */
+.highlight .nx { color: #000000 } /* Name.Other */
+.highlight .py { color: #000000 } /* Name.Property */
+.highlight .nt { color: #204a87; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #000000 } /* Name.Variable */
+.highlight .ow { color: #204a87; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #f8f8f8; text-decoration: underline } /* Text.Whitespace */
+.highlight .mb { color: #0000cf; font-weight: bold } /* Literal.Number.Bin */
+.highlight .mf { color: #0000cf; font-weight: bold } /* Literal.Number.Float */
+.highlight .mh { color: #0000cf; font-weight: bold } /* Literal.Number.Hex */
+.highlight .mi { color: #0000cf; font-weight: bold } /* Literal.Number.Integer */
+.highlight .mo { color: #0000cf; font-weight: bold } /* Literal.Number.Oct */
+.highlight .sa { color: #4e9a06 } /* Literal.String.Affix */
+.highlight .sb { color: #4e9a06 } /* Literal.String.Backtick */
+.highlight .sc { color: #4e9a06 } /* Literal.String.Char */
+.highlight .dl { color: #4e9a06 } /* Literal.String.Delimiter */
+.highlight .sd { color: #8f5902; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4e9a06 } /* Literal.String.Double */
+.highlight .se { color: #4e9a06 } /* Literal.String.Escape */
+.highlight .sh { color: #4e9a06 } /* Literal.String.Heredoc */
+.highlight .si { color: #4e9a06 } /* Literal.String.Interpol */
+.highlight .sx { color: #4e9a06 } /* Literal.String.Other */
+.highlight .sr { color: #4e9a06 } /* Literal.String.Regex */
+.highlight .s1 { color: #4e9a06 } /* Literal.String.Single */
+.highlight .ss { color: #4e9a06 } /* Literal.String.Symbol */
+.highlight .bp { color: #3465a4 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #000000 } /* Name.Function.Magic */
+.highlight .vc { color: #000000 } /* Name.Variable.Class */
+.highlight .vg { color: #000000 } /* Name.Variable.Global */
+.highlight .vi { color: #000000 } /* Name.Variable.Instance */
+.highlight .vm { color: #000000 } /* Name.Variable.Magic */
+.highlight .il { color: #0000cf; font-weight: bold } /* Literal.Number.Integer.Long */
+
+div#post{
+    margin: 0.5em;
+    border: 0.2em dashed #ccccff;
+    padding: 0.5em;
+    background-color: #fff;
+    box-shadow: #444 0.1em 0.1em 0.2em;
+}
+div.post{
+   /* border: 0.2em dashed #ff44aa;*/
+    display: flex;
+    margin: 0.5em;
+    background-color: #fff;
+    box-shadow: #444 0.1em 0.1em 0.2em;
+}
+
+div.post div{
+    flex-flow: column wrap;
+}
+div.vote-button{
+    flex-flow:row wrap;
+    width: 5%;
+    margin-left: 3%;
+    margin-top: 7%;
+    text-align: center;
+}
+.syntax{
+background-color: #EFF0F1;
+width: 100%;
+}
+
+
+.snippet{
+    width: 100%;
+}
+
+
+.add-snippet {
+  color: #326388;
+  text-align:left;
+  border-radius: 5px;
+  padding: 20px;
+}
+.add-snippet textarea {
+  width: 60%;
+  height: 180px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+.add-snippet input[type=text], select {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.add-snippet input[type=submit] {
+  width: 10%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size : 20px;
+
+}
+
+.add-snippet input[type=submit]:hover {
+  background-color: #45a049;
+  }
+
+  .icon-list{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding-right: 100px;
+      margin-bottom: 10px;
+  }
+
+  label{
+      text-align: left;
+  }
+
+  .vote-btn{
+    background-color: Transparent;
+    border: none;
+    font-size: 30px;
+  }

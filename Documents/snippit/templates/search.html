@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Snippit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Snippit">
+    <meta name="keywords" content="snippets, community, python">
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Righteous" rel="stylesheet">
+    <link href="/css/snippit.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Kodchasan" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <script>
+        function upVote(id) {
+            console.log(id)
+            document.getElementById('grade'+id.substring(2)).innerText = ++document.getElementById('grade' + id.substring(2)).innerText
+
+
+        }
+        function downVote(id) {
+            document.getElementById('grade'+id.substring(4)).innerText = --document.getElementById('grade' + id.substring(4)).innerText
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="page">
+        <header class="shadowed">
+            <div id="divider" class="shadowed animated-height">
+                <a class="logo" href="/">SNI.PET</a>
+                <form method="get" action="/search" class=search-bar>
+                    <input class="search-field" name="query" type="text" />
+                    <button class="clickable search-btn" type="submit" >search</button>
+                    <button class="clickable search-btn" type="submit"  formaction="/wide-search" >wide search</button>
+
+                </form>
+                <form>
+                    <button>Sign up</button>
+                    <button>login</button>
+                </form>
+            </div>
+        </header>
+        <main class="page-content">
+            {% for r in results %}
+            <div class="search-result">
+                <div class="vote-button">
+                <button class="fas fa-angle-up vote-btn" onClick = 'upVote(this.id)' id="{{'up'+r['snippet_id']|string}}" ></button><br />
+                    <span class="vote" id="{{'grade'+r['snippet_id']|string}}">{{r['votes']}}</span> <br />
+                    <button class="fas fa-angle-down vote-btn" id="{{'down'+r['snippet_id']|string}}"  onClick = 'downVote(this.id)'></button>
+
+                </div>
+                <div class = snippet-content>
+                    <div class="snippet">
+                        <h3>{{r["title"]}}</h3>
+                        {{r["snippet_html"]}}
+                    </div>
+                    <ul class = "icon-list">
+                        <li>
+                            <i class="fas fa-code"></i>
+                            {% for s in r["languages"] %}
+                            <span>{{s}}</span>
+                            {% endfor %}
+                        </li>
+                        <li>
+                            <i class="fas fa-box"></i>
+                            {% for s in r["frameworks"] %}
+                            <span>{{s}}</span>
+                            {% endfor %}
+                        </li>
+                        <li>
+                            <i class="fas fa-tags"></i>
+                            {% for s in r["topics"] %}
+                            <span>{{s}}</span>
+                            {% endfor %}
+                        </li>
+                        <li>
+                            <i class="fas fa-comment-dots"></i>
+                            <span>{{r["comments"]}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+            {% if not results %}
+            No Results :(
+            {% endif %}
+        </main>
+    </div>
+    <script src="/js/browse.js"></script>
+</body>
+
+</html>

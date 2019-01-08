@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SNI.PET</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="sni.pet">
+    <meta name="keywords" content="snippets, community, python">
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Righteous" rel="stylesheet">
+    <link href="/css/snippit.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="shadowed">
+            <div id="divider" class="shadowed animated-height">
+                <a class="logo" href="/">SNI.PET</a>
+                <form>
+                    <button>Sign up</button>
+                    <button>login</button>
+                </form>
+            </div>
+        </header>
+        <main class="page-content">
+            <br/>
+            <form method="get" action="/search">
+                <input class="search-field" name="query" type="text" />
+                <br><br>
+                <button class="clickable search-btn" type="submit" >search</button>
+                <button class="clickable search-btn" type="submit"  formaction="/wide-search" >wide search</button>
+
+            </form>
+            <form method="get" action="/post_snippet" class = "post-form">
+                <input class="clickable search-btn" type="submit" value="post snippet"/>
+            </form>
+        </main>
+    </div>
+    <script src="/js/browse.js"></script>
+</body>
+
+</html>

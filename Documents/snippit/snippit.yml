@@ -1,0 +1,16 @@
+name: snippit
+channels:
+  - conda-forge
+dependencies:
+  - python=3.6.7
+  - pip
+  - click
+  - pymysql
+  - nltk
+  - pytest
+  - sqlite
+  - tqdm
+  - pip:
+    - bottle
+    - Pygments
+    - mysql-connector

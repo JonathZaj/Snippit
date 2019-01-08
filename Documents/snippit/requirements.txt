@@ -1,0 +1,7 @@
+bottle
+click
+mysql
+mysql-connector-python
+pytest
+tqdm
+pygments
